@@ -1,0 +1,11 @@
+tol 0.001
+constr_viol_tol 0.001
+compl_inf_tol 0.001
+
+mu_strategy adaptive
+
+max_iter 5000
+output_file results.txt
+
+print_timing_statistics yes
+print_user_options yes
