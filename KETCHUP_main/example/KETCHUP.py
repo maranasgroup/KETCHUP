@@ -8,9 +8,9 @@ from ktools.core import *
 import sys
 
 directory_model = f'{os.getcwd()}/data/'
-filename_model = "k-ecoli74'_model.xlsx"
-filename_mechanism = "k-ecoli74'_mech.xlsx"
-filename_data = "k-ecoli74'_data.xlsx"
+filename_model = "k-ecoli74_model.xlsx"
+filename_mechanism = "k-ecoli74_mech.xlsx"
+filename_data = "k-ecoli74_data.xlsx"
 model_name = 'k-ecoli74'
 
 mech_type = 'elemental'
