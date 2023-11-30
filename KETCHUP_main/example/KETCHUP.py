@@ -28,34 +28,34 @@ data_dict = create_data_dict(data_df)
 from pyomo.environ import *
 from pyomo.dae import *
 seedvalue = int(sys.argv[1])
-dae_model = create_initial_model(m_model,mech_df,data_dict,seedvalue=seedvalue,distribution='uniform',mech_type=mech_type)
+ketchup_model = create_initial_model(m_model,mech_df,data_dict,seedvalue=seedvalue,distribution='uniform',mech_type=mech_type)
 
 experiments = []
 for i,d in enumerate(data_dict.keys()):
-    dae_model.key = d
-    dae_model.add_component(f'experiment{i}', Block(rule=create_sMB))
-    experiments.append(eval(f'dae_model.experiment{i}'))
+    ketchup_model.key = d
+    ketchup_model.add_component(f'experiment{i}', Block(rule=create_sMB))
+    experiments.append(eval(f'ketchup_model.experiment{i}'))
     print(f'dataset included: {d}')
 
-dae_model.add_component('block_list', Set(initialize = experiments))
-dae_model.reaction_rate = Constraint(dae_model.block_list, dae_model.experiment0.REACTIONS, rule=net_reaction_rate)
+ketchup_model.add_component('block_list', Set(initialize = experiments))
+ketchup_model.reaction_rate = Constraint(ketchup_model.block_list, ketchup_model.experiment0.REACTIONS, rule=net_reaction_rate)
 
-#dae_model.experiment0.vf.pprint()
+#ketchup_model.experiment0.vf.pprint()
 if mech_type == 'elemental':
     def ref_conc_constraint(m,s):
         return m.experiment0.c[s] == 1.0
         
             #fix wild-type fluxes
     for r in data_dict['WT']:
-        dae_model.experiment0.rate[r].fix(data_dict['WT'][r][0])
+        ketchup_model.experiment0.rate[r].fix(data_dict['WT'][r][0])
          
-    dae_model.ref_conc_constraint = Constraint(dae_model.experiment0.SPECIES, rule=ref_conc_constraint)        
-    dae_model.obj = Objective( sense=minimize,
+    ketchup_model.ref_conc_constraint = Constraint(ketchup_model.experiment0.SPECIES, rule=ref_conc_constraint)        
+    ketchup_model.obj = Objective( sense=minimize,
                  expr = sum(  b.error for b in experiments )               
                      )
-    dae_model.vf_rate = Constraint(dae_model.block_list, dae_model.ELEMENTALSTEP_F, rule = elemental_vf)
-    dae_model.vr_rate = Constraint(dae_model.block_list, dae_model.ELEMENTALSTEP_R, rule = elemental_vr)
-    dae_model.es_net  = Constraint(dae_model.block_list, dae_model.ELEMENTALSTEP_F, rule = es_net_balance) 
+    ketchup_model.vf_rate = Constraint(ketchup_model.block_list, ketchup_model.ELEMENTALSTEP_F, rule = elemental_vf)
+    ketchup_model.vr_rate = Constraint(ketchup_model.block_list, ketchup_model.ELEMENTALSTEP_R, rule = elemental_vr)
+    ketchup_model.es_net  = Constraint(ketchup_model.block_list, ketchup_model.ELEMENTALSTEP_F, rule = es_net_balance) 
     
 
 
@@ -68,7 +68,7 @@ from timeit import default_timer as timer
 
 time_start = timer();
 try:
-    results = solver.solve(dae_model, tee=True,symbolic_solver_labels=True);
+    results = solver.solve(ketchup_model, tee=True,symbolic_solver_labels=True);
     total_error = sum( b.error.value for exps in experiments for b in exps[:] )
     status = str(results.Solver[0]['Termination condition']) 
 except ValueError:
@@ -76,7 +76,7 @@ except ValueError:
     total_error = 'NA'
 time_end = timer()
  
-result_dump(f"{model_name}_{status}_results",sys.argv[1],dae_model,time_end - time_start,status)
-evaluate_stability(mech_df,experiments,sys.argv[1],dae_model,time_end - time_start,status)
+result_dump(f"{model_name}_{status}_results",sys.argv[1],ketchup_model,time_end - time_start,status)
+evaluate_stability(mech_df,experiments,sys.argv[1],ketchup_model,time_end - time_start,status)
 
 
