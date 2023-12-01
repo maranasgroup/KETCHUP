@@ -1,28 +1,28 @@
 import streamlit as st
 import os
-import numpy as np
 from os.path import join
+import sys
+
+# add path to ktools if not installed
+sys.path.insert(0, f"{os.getcwd()}/../src/")
+
 import ktools
 from ktools.io import read_kfit_model_xlsx
 from ktools.io import read_kfit_data_xlsx
 from ktools.io import result_dump, create_sbml_kinetic_model, evaluate_stability
 from ktools.core import *
-import sys
+import numpy as np
 import tempfile
 from pyomo.environ import *
 from pyomo.dae import *
 import time
 
-import libsbml
-import cobra
-from typing import Union
-
 ##STREAMLIT GUI START
 st.image('./images/header.jpg')
-model_file = st.file_uploader("Select Model file")
-mechanism_file = st.file_uploader("Select Mechanism file")
-data_file = st.file_uploader("Select Data file")
-model_name = st.text_input("Model name", "kmodel")
+model_file = st.file_uploader('Select Model file')
+mechanism_file = st.file_uploader('Select Mechanism file')
+data_file = st.file_uploader('Select Data file')
+model_name = st.text_input('Model name', 'kmodel')
 #current defaults
 mech_type = 'elemental'
 
@@ -31,26 +31,26 @@ mech_type = 'elemental'
 def random_seed_value():
     return int(str(int(time.time()))[-3:])
 
-seed_input = st.text_input("Seed value", random_seed_value() )
+seed_input = st.text_input('Seed value', random_seed_value() )
 
 #start parameterization
 model_missing = False; mechanism_missing = False; data_missing = False
-if st.button("Start parameterization"):
+if st.button('Start parameterization'):
     #check for file
     if model_file is None: model_missing = True
     if mechanism_missing is None: mechanism_missing = True
     if data_missing is None: data_missing = True
     # if files are missing do not run
     if model_missing or mechanism_missing or data_missing:
-        st.write("Missing files")
+        st.write('Missing files')
 
     else: 
         #create temporaray directory to store the file
-        directory_model = '.\\scratch\\'
+        directory_model = './scratch/'
         if not os.path.isdir(directory_model): os.makedirs(directory_model)
         for file in [model_file, mechanism_file, data_file]:
             temp_path = os.path.join(directory_model, file.name)
-            with open(temp_path, "wb")  as f:
+            with open(temp_path, 'wb')  as f:
                 f.write(file.getvalue())
             f.close()
 
@@ -72,9 +72,9 @@ if st.button("Start parameterization"):
         experiments = []
         for i,d in enumerate(data_dict.keys()):
             ketchup_model.key = d
-            ketchup_model.add_component(f'experiment{i}', Block(rule=create_sMB))
-            experiments.append(eval(f'ketchup_model.experiment{i}'))
-            print(f'dataset included: {d}')
+            ketchup_model.add_component(f"experiment{i}", Block(rule=create_sMB))
+            experiments.append(eval(f"ketchup_model.experiment{i}"))
+            print(f"dataset included: {d}")
 
         ketchup_model.add_component('block_list', Set(initialize = experiments))
         ketchup_model.reaction_rate = Constraint(ketchup_model.block_list, ketchup_model.experiment0.REACTIONS, rule=net_reaction_rate)
@@ -105,7 +105,7 @@ if st.button("Start parameterization"):
         from timeit import default_timer as timer
 
         time_start = timer();
-        with st.spinner("Running....."):
+        with st.spinner('Running.....'):
             try: 
                 results = solver.solve(ketchup_model, tee=True,symbolic_solver_labels=True);
                 total_error = sum( b.error.value for exps in experiments for b in exps[:] )
@@ -114,10 +114,10 @@ if st.button("Start parameterization"):
                 status = 'Status Error'
                 total_error = 'NA'
         time_end = timer()
-        status_msg = "Unknown status, please check command prompt"
-        if status == "maxIterations": status_msg = "Max Iterations reached, no solution found"
-        if status == "Status Error": status_msg = "Unable to converge to a solution"
-        if status == "optimal" : status_msg = f"Optimal solution found - SSR : {round(float(ketchup_model.obj()),3)}"
+        status_msg = 'Unknown status, please check command prompt'
+        if status == 'maxIterations': status_msg = 'Max Iterations reached, no solution found'
+        if status == 'Status Error': status_msg = 'Unable to converge to a solution'
+        if status == 'optimal' : status_msg = f"Optimal solution found - SSR : {round(float(ketchup_model.obj()),3)}"
         
         st.write(status_msg)
         result_dump(f"{model_name}_{status}_results",seedvalue,ketchup_model,time_end - time_start,status)
