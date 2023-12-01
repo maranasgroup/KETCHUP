@@ -1,12 +1,13 @@
 """
 outputs function
 
-print results as json
+collects basic functions that output results
 
 """
 from pyomo.contrib.pynumero.interfaces.pyomo_nlp import PyomoNLP
 import numpy as np
 import os
+from typing import Union
 
 
 def result_dump(name,solnum,model,time_solved,status,static=1,):
@@ -75,7 +76,6 @@ def result_dump(name,solnum,model,time_solved,status,static=1,):
 
     print(f"sucessful export of data into {fn}")
 
-
     if status == 'optimal':
         if os.path.isfile('optimal_solutions.txt'):
             f = open('optimal_solutions.txt','a')
@@ -88,6 +88,7 @@ def result_dump(name,solnum,model,time_solved,status,static=1,):
     else:
        f = open('totalruns.txt','w')
     f.write(f'iteration:{solnum} - status:{status} - time:{time_solved}\n')   
+    f.close()
     return None
 
 def infeasible_constraints(model,filename,tol=10**-3):
@@ -114,12 +115,10 @@ def infeasible_constraints(model,filename,tol=10**-3):
               f.write(f'value error , {constr}\n')
         print(f'max_violation - {max(violations)} | constraint {constraint_list[violations.index(max(violations))]}')
         f.write(f'max_violation - {max(violations)} | constraint {constraint_list[violations.index(max(violations))]}\n')
-        f.close()
+    return
 
-
-
-def evaluate_stability(mech_df,experiments,solnum,dae_model,time_solved,status):
-    nlp = PyomoNLP(dae_model)
+def evaluate_stability(mech_df,experiments,solnum,pyomo_model,time_solved,status):
+    nlp = PyomoNLP(pyomo_model)
     m = nlp.evaluate_jacobian().toarray() 
     #h = nlp.evaluate_hessian_lag().todense()
     #g = nlp.evaluate_grad_objective()
@@ -128,15 +127,15 @@ def evaluate_stability(mech_df,experiments,solnum,dae_model,time_solved,status):
     elemental_steps = [f"{r}_{mech_df['step ID'].values[i]}" for i,r in enumerate(mech_df['rxn ID'].tolist())]
     rki = {}
     for i,exp in enumerate(experiments):
-        for j,es in enumerate(dae_model.rxn_enz_sum.keys()):
-            rki.update({(i*len(dae_model.rxn_enz_sum.keys())+j):es})
-            rki.update({len(experiments)*len(dae_model.rxn_enz_sum.keys())+(i*len(dae_model.rxn_enz_sum.keys())+j):es})
-    vf_ind = nlp.get_constraint_indices([dae_model.vf_rate])
-    vr_ind = nlp.get_constraint_indices([dae_model.vr_rate])
-    rxn_count = len(dae_model.ELEMENTALSTEP_F)
+        for j,es in enumerate(pyomo_model.rxn_enz_sum.keys()):
+            rki.update({(i*len(pyomo_model.rxn_enz_sum.keys())+j):es})
+            rki.update({len(experiments)*len(pyomo_model.rxn_enz_sum.keys())+(i*len(pyomo_model.rxn_enz_sum.keys())+j):es})
+    vf_ind = nlp.get_constraint_indices([pyomo_model.vf_rate])
+    vr_ind = nlp.get_constraint_indices([pyomo_model.vr_rate])
+    rxn_count = len(pyomo_model.ELEMENTALSTEP_F)
     stability = "stable"
     for e,exp in enumerate(experiments):
-        J = m[vf_ind[e*rxn_count:(e+1)*rxn_count]+vr_ind[e*rxn_count:(e+1)*rxn_count],:][:,nlp.get_primal_indices([dae_model.kf])+nlp.get_primal_indices([dae_model.kr])]
+        J = m[vf_ind[e*rxn_count:(e+1)*rxn_count]+vr_ind[e*rxn_count:(e+1)*rxn_count],:][:,nlp.get_primal_indices([pyomo_model.kf])+nlp.get_primal_indices([pyomo_model.kr])]
     
         zero_eig = []
         thres = 10**-3
@@ -152,5 +151,6 @@ def evaluate_stability(mech_df,experiments,solnum,dae_model,time_solved,status):
         if p > 0: stability = 'unstable'
         #print(f"{exp} - pos {p}\nneg {n}\nzer {z}",flush=True)    
 
-    if status == "optimal": result_dump(f"s_{status}_{stability}_results",solnum,dae_model,time_solved,status)
+    if status == "optimal": result_dump(f"s_{status}_{stability}_results",solnum,pyomo_model,time_solved,status)
     return None
+
