@@ -76,7 +76,10 @@ except ValueError:
     total_error = 'NA'
 time_end = timer()
  
-result_dump(f"{model_name}_{status}_results",sys.argv[1],ketchup_model,time_end - time_start,status)
+result_dump(f"{model_name}_{status}_results",seedvalue,ketchup_model,time_end - time_start,status)
+kmodel_sbml = create_sbml_kinetic_model(ketchup_model)
+with open(f"{model_name}_{status}_results_{seedvalue}.xml", 'w') as output_file:
+    output_file.write(kmodel_sbml)
 evaluate_stability(mech_df,experiments,sys.argv[1],ketchup_model,time_end - time_start,status)
 
 
