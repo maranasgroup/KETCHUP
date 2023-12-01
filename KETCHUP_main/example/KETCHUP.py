@@ -3,7 +3,7 @@ from os.path import join
 import ktools
 from ktools.io import read_kfit_model_xlsx
 from ktools.io import read_kfit_data_xlsx
-from ktools.io import result_dump, evaluate_stability
+from ktools.io import result_dump, create_sbml_kinetic_model, evaluate_stability
 from ktools.core import *
 import sys
 
@@ -27,6 +27,7 @@ data_dict = create_data_dict(data_df)
     
 from pyomo.environ import *
 from pyomo.dae import *
+
 seedvalue = int(sys.argv[1])
 ketchup_model = create_initial_model(m_model,mech_df,data_dict,seedvalue=seedvalue,distribution='uniform',mech_type=mech_type)
 
@@ -57,8 +58,6 @@ if mech_type == 'elemental':
     ketchup_model.vr_rate = Constraint(ketchup_model.block_list, ketchup_model.ELEMENTALSTEP_R, rule = elemental_vr)
     ketchup_model.es_net  = Constraint(ketchup_model.block_list, ketchup_model.ELEMENTALSTEP_F, rule = es_net_balance) 
     
-
-
 #load status results
 solver = SolverFactory('ipopt')
 option_name = 'ipopt.opt' if int(seedvalue) <= 0 else f'./options/ipopt_{seedvalue}.opt'
@@ -81,5 +80,4 @@ kmodel_sbml = create_sbml_kinetic_model(ketchup_model)
 with open(f"{model_name}_{status}_results_{seedvalue}.xml", 'w') as output_file:
     output_file.write(kmodel_sbml)
 evaluate_stability(mech_df,experiments,sys.argv[1],ketchup_model,time_end - time_start,status)
-
 
