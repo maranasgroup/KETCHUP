@@ -7,7 +7,7 @@ Parsing of K-FIT derived dataframes of model and mechanism data.
 import cobra
 import pandas as pd
 
-def parse_kfit_model_df(df_metabolite,df_reaction,model_name="model",debug=False):
+def parse_kfit_model_df(df_metabolite, df_reaction, model_name='model', debug=False):
     """ Parse the DataFrames of the K-FIT model inputs and convert into COBRApy model. 
     """
 
@@ -18,7 +18,7 @@ def parse_kfit_model_df(df_metabolite,df_reaction,model_name="model",debug=False
     for idx, row in df_metabolite.iterrows():
         item = row['ID']
         if item not in m.metabolites:
-            met_var = 'M_'+str(tmp_counter)
+            met_var = f"M_{tmp_counter}"
             # note: K-FIT spreadsheets do not track charges
             vars()[met_var] = cobra.Metabolite(item,formula=row['Formula'],name=row['Name'])
             if row['Name'] is None:
@@ -33,7 +33,7 @@ def parse_kfit_model_df(df_metabolite,df_reaction,model_name="model",debug=False
                 comp='c'
             vars()[met_var].compartment=comp
             # TODO: set sbo for exchange metabolites
-            vars()[met_var].annotation={"sbo":"SBO:0000247"}
+            vars()[met_var].annotation={'sbo':'SBO:0000247'}
             m.add_metabolites([vars()[met_var]])
             tmp_counter += 1
 
@@ -44,7 +44,7 @@ def parse_kfit_model_df(df_metabolite,df_reaction,model_name="model",debug=False
     for idx, row in df_reaction.iterrows():
         item = str(row['Rxn ID'])
         if item not in m.reactions:
-            rxn_var = 'R_'+str(tmp_counter)
+            rxn_var = f"R_{tmp_counter}"
             vars()[rxn_var] = cobra.Reaction(item, name=row['Rxn name'])
             m.add_reaction(vars()[rxn_var])
             vars()[rxn_var].reaction = (str(row['Rxn Formula']))
@@ -59,8 +59,8 @@ def parse_kfit_model_df(df_metabolite,df_reaction,model_name="model",debug=False
         print(f'COBRA model with name {model_name} created')
     return m
 
-def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="elemental",
-                       debug=False,testing_flag=False):
+def parse_kfit_mech_df(df_mechanism, m_model=None, model_name='model',
+                       mech_type='elemental', debug=False, testing_flag=False):
     """ Parse the DataFrames of the K-FIT mechanism inputs and convert into COBRApy model.
     Uses the COBRA model so validate the reaction and metabolite ids.
     """
@@ -83,7 +83,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
     else:
         rxn_id_list = df_mechanism['ID'].squeeze().tolist()
         
-    def df_join_reactions(df=pd.DataFrame(),data=None):
+    def df_join_reactions(df=pd.DataFrame(), data=None):
         """ Add items to the dataframe or initialize the data frame if empty
         
         """
@@ -94,24 +94,25 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
             df = pd.DataFrame(data, columns = chart_index)
         return df
 
-    def enzyme_complex_name(name,cmp):
+    def enzyme_complex_name(name, cmp):
         """ Convert list based bindings into readable enzyme complexes. Enables 
             having informative names instead of generic entries like R1_enz_complex_1
         """
 
-        output = str(name)
+        output = str(name) # TODO: update using join
         if cmp:
             for item in cmp:
                 output = output + "+" + str(item)
         return output
     
-    def generate_elemental_reactions(rxn_df,base_enzyme_name=None):
+    def generate_elemental_reactions(rxn_df, base_enzyme_name=None):
         mechanism = rxn_df.mechanism
         base_rxn_name = rxn_df.ID
         
         if not base_enzyme_name:
-            # note that this step assumes that enzymes are independent for each reaction
-            base_enzyme_name = rxn_df.ID+"_ENZ"
+            # note that this step assumes that enzymes are independent for each reaction.
+            # if some are the same, constraints will need to be added elsewhere
+            base_enzyme_name = f"{rxn_df.ID}_ENZ"
 
         # TODO: validate all metabolites included
 
@@ -210,7 +211,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
 
                 for count,item in enumerate(sbo):
                     if count > 0:
-                        current_base_enzyme_name = base_enzyme_name+"_"+str(count)
+                        current_base_enzyme_name = f"{base_enzyme_name}_{count}"
                     else:
                         current_base_enzyme_name = base_enzyme_name
 
@@ -242,7 +243,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
 
                     current_react_list = [enz]
                     if (count+1) < len(sbo):
-                        enz = base_enzyme_name+"_"+str(count+1)
+                        enz = f"{base_enzyme_name}_{count+1}"
                     else:
                         enz = base_enzyme_name
                     # correct: we want the following current one 
@@ -322,7 +323,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
                 current_react_list = [enz,item]
                 enz = enzyme_complex_name(base_enzyme_name,[item_i])
                 current_prod_list  = [enz]
-                current_rxn_name = "i"+str(reg_cumulative_count)
+                current_rxn_name = f"i{reg_cumulative_count}"
                 
                 rxn_list.append([rxn_df.ID, current_rxn_name,
                                      current_react_list, current_prod_list,
@@ -347,7 +348,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
                 current_react_list = [enz,item]
                 enz = enzyme_complex_name(enz,[item_i])
                 current_prod_list  = [enz]
-                current_rxn_name = "i"+str(reg_cumulative_count)
+                current_rxn_name = f"i{reg_cumulative_count}"
                 
                 rxn_list.append([rxn_df.ID, current_rxn_name,
                                      current_react_list, current_prod_list,
@@ -380,7 +381,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
                 current_react_list = [enz,item]
                 enz = enzyme_complex_name(enz,[item_i])
                 current_prod_list  = [enz]
-                current_rxn_name = "i"+str(reg_cumulative_count)
+                current_rxn_name = f"i{reg_cumulative_count}"
                 
                 rxn_list.append([rxn_df.ID, current_rxn_name,
                                      current_react_list, current_prod_list,
@@ -409,7 +410,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
         
         return df_new_reactions
 
-    def generate_mm_reactions(rxn_df,base_enzyme_name=None):
+    def generate_mm_reactions(rxn_df, base_enzyme_name=None):
         mechanism = rxn_df.mechanism
         base_rxn_name = rxn_df.ID
         
@@ -473,7 +474,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
             for count,item in enumerate(imechanism):
                 current_react_list = [item]
                 current_prod_list  = None
-                current_rxn_name = "i"+str(reg_cumulative_count)
+                current_rxn_name = f"i{reg_cumulative_count}"
                    
                 # add new data frame row
                 rxn_list.append([rxn_df.ID, current_rxn_name,
@@ -491,7 +492,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
             for count,item in enumerate(imechanism):
                 current_react_list = [item]
                 current_prod_list  = None
-                current_rxn_name = "i"+str(reg_cumulative_count)
+                current_rxn_name = f"i{reg_cumulative_count}"
                    
                 # add new data frame row
                 rxn_list.append([rxn_df.ID, current_rxn_name,
@@ -528,7 +529,7 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
             for count,item in enumerate(imechanism):
                 current_react_list = [item]
                 current_prod_list  = None
-                current_rxn_name = "i"+str(reg_cumulative_count)
+                current_rxn_name = f"i{reg_cumulative_count}"
                    
                 # add new data frame row
                 rxn_list.append([rxn_df.ID, current_rxn_name,
@@ -553,17 +554,16 @@ def parse_kfit_mech_df(df_mechanism,m_model=None,model_name="model",mech_type="e
         for rxn in df_mechanism.index:
             if debug:
                 print (df_mechanism.loc[rxn].tolist())
-            if mech_type.lower() == "elemental":
+            if mech_type.lower() == 'elemental':
                 _tmp_er = generate_elemental_reactions(df_mechanism.loc[rxn])
                 #print(ww)
-            elif mech_type.lower() == "mm" or mech_type.lower() == "michaelis-menten":
+            elif mech_type.lower() == "mm" or mech_type.lower() == 'michaelis-menten':
                 
                 _tmp_er = generate_mm_reactions(df_mechanism.loc[rxn])
             else:
                 print (f"Unknown mechanism type {mech_type}")
 
             df_reactions = pd.concat([df_reactions, _tmp_er],ignore_index=True)
-    
     
     return df_reactions
 

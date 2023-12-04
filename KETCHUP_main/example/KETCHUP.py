@@ -35,14 +35,14 @@ from pyomo.dae import *
 
 try:
     seedvalue = int(sys.argv[1])
-except:
+except (ValueError, IndexError):
     seedvalue = 0
 
 ketchup_model = create_initial_model(m_model,mech_df,data_dict,seedvalue=seedvalue,distribution='uniform',mech_type=mech_type)
 
 try:
-    ketchup_model.name = model_name
-except:
+    ketchup_model.name = str(model_name)
+except NameError:
     pass
 
 experiments = []
@@ -100,6 +100,6 @@ with open(f"{model_name}_{status}_results_{seedvalue}.xml", 'w') as output_file:
 if status == 'optimal':
     try:
         evaluate_stability(mech_df,experiments,seedvalue,ketchup_model,time_end - time_start,status)
-    except:
+    except Exception:
         pass
 

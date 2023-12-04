@@ -10,10 +10,10 @@ import os
 from typing import Union
 
 
-def result_dump(name,solnum,model,time_solved,status,static=1,):
+def result_dump(name, solnum, model, time_solved, status, static=1) -> None:
     import json
     
-    fn = name+'_'+str(solnum)+'.txt'
+    fn = f"{name}_{str(solnum)}.txt"
     res = {}
     
     res_kf = {}
@@ -34,17 +34,18 @@ def result_dump(name,solnum,model,time_solved,status,static=1,):
     res_SSR = {}
     res_time = {}
     total_error = 0
-    for count,key in enumerate(exp_keys):
+    for count, key in enumerate(exp_keys):
         #try:
          _tmp_c = {}
          _tmp_e = {}
          _tmp_rate = {}
+
          if count == 0:
              cur_exp = model.experiment0
          else:
-             cur_exp = eval('model.experiment'+str(count))
+             cur_exp = eval(f"model.experiment{str(count)}")
+
          if static:
- 
              for item in cur_exp.c:
                  _tmp_c[str(item)] = cur_exp.c[item].value
              for item in cur_exp.e:
@@ -52,7 +53,6 @@ def result_dump(name,solnum,model,time_solved,status,static=1,):
              for item in cur_exp.rate:
                  _tmp_rate[str(item)] = cur_exp.rate[item].value
              total_error += cur_exp.error.value        
-             
          else:
              for item in cur_exp[10].c:
                  _tmp_c[str(item)] = cur_exp[10].c[item].value
@@ -63,8 +63,6 @@ def result_dump(name,solnum,model,time_solved,status,static=1,):
          res_c[key] = _tmp_c
          res_e[key] = _tmp_e
          res_rate[key] = _tmp_rate
-        #except:
-        #    continue
     res['c'] = res_c
     res['e'] = res_e
     res['rate'] = res_rate
@@ -73,51 +71,47 @@ def result_dump(name,solnum,model,time_solved,status,static=1,):
 
     with open(fn, 'w') as json_file:
         json.dump(res, json_file)
-
-    print(f"sucessful export of data into {fn}")
+        print(f"sucessful export of data into {fn}")
 
     if status == 'optimal':
-        if os.path.isfile('optimal_solutions.txt'):
-            f = open('optimal_solutions.txt','a')
-        else:
-            f = open('optimal_solutions.txt','w')
-        f.write(f'iteration {solnum} - SSR {round(float(total_error),3)} - obj value - {round(float(model.obj()),3)} time - {time_solved}\n')
+        with open('optimal_solutions.txt', 'a+') as f:
+            f.write(f"iteration {solnum} - SSR {round(float(total_error),3)} - obj value - {round(float(model.obj()),3)} time - {time_solved}\n")
 
-    if os.path.isfile('totalruns.txt'):
-        f = open('totalruns.txt','a')
-    else:
-       f = open('totalruns.txt','w')
-    f.write(f'iteration:{solnum} - status:{status} - time:{time_solved}\n')   
-    f.close()
+    with open ('totalruns.txt','a+') as f:
+        f.write(f"iteration:{solnum} - status:{status} - time:{time_solved}\n")   
     return None
 
-def infeasible_constraints(model,filename,tol=10**-3):
-    with open(f'{filename}','a') as f:
+def infeasible_constraints(model, filename, tol=10**-3):
+    with open(f"{filename}",'a+') as f:
         violations = []
         constraint_list = []
         for constr in model.component_data_objects(ctype=Constraint,active=True):
           try:
               c_val = value(constr)
               if c_val < constr.lb: 
-                  if abs(c_val - constr.lb) > tol: 
-                      f.write(f'lb violation - {constr}, {c_val}, {constr.lb}\n')
-                      print(f'lb violation - {constr}, {c_val}, {constr.lb}')              
+                  if abs(c_val - constr.lb) > tol:
+                      violation_str = f"lb violation - {constr}, {c_val}, {constr.lb}"
+                      print(violation_str)              
+                      f.write(f"{violation_str}\n")
                   violations.append( abs(c_val - constr.lb) )
                   constraint_list.append(constr)
               if c_val > constr.ub:
                   if abs(c_val - constr.ub) > tol:
-                      f.write(f'ub violation - {constr}, {c_val}, {constr.ub}\n')
-                      print(f'ub violation - {constr}, {c_val}, {constr.ub}') 
+                      violation_str = f"ub violation - {constr}, {c_val}, {constr.ub}"
+                      print(violation_str) 
+                      f.write(f"{violation_str}\n")
                   violations.append( abs(c_val - constr.ub) )
                   constraint_list.append(constr)
                   
           except ValueError:
-              f.write(f'value error , {constr}\n')
-        print(f'max_violation - {max(violations)} | constraint {constraint_list[violations.index(max(violations))]}')
-        f.write(f'max_violation - {max(violations)} | constraint {constraint_list[violations.index(max(violations))]}\n')
+              f.write(f"value error , {constr}\n")
+        violation_str = f"max_violation - {max(violations)} | constraint {constraint_list[violations.index(max(violations))]}"
+        print(violation_str)
+        f.write(f"{violation_str}\n")
     return
 
-def evaluate_stability(mech_df,experiments,solnum,pyomo_model,time_solved,status):
+def evaluate_stability(mech_df, experiments, solnum, pyomo_model, time_solved,
+                       status) -> None:
     nlp = PyomoNLP(pyomo_model)
     m = nlp.evaluate_jacobian().toarray() 
     #h = nlp.evaluate_hessian_lag().todense()
@@ -133,7 +127,7 @@ def evaluate_stability(mech_df,experiments,solnum,pyomo_model,time_solved,status
     vf_ind = nlp.get_constraint_indices([pyomo_model.vf_rate])
     vr_ind = nlp.get_constraint_indices([pyomo_model.vr_rate])
     rxn_count = len(pyomo_model.ELEMENTALSTEP_F)
-    stability = "stable"
+    stability = 'stable'
     for e,exp in enumerate(experiments):
         J = m[vf_ind[e*rxn_count:(e+1)*rxn_count]+vr_ind[e*rxn_count:(e+1)*rxn_count],:][:,nlp.get_primal_indices([pyomo_model.kf])+nlp.get_primal_indices([pyomo_model.kr])]
     
@@ -151,6 +145,7 @@ def evaluate_stability(mech_df,experiments,solnum,pyomo_model,time_solved,status
         if p > 0: stability = 'unstable'
         #print(f"{exp} - pos {p}\nneg {n}\nzer {z}",flush=True)    
 
-    if status == "optimal": result_dump(f"s_{status}_{stability}_results",solnum,pyomo_model,time_solved,status)
+    if status == 'optimal':
+        result_dump(f"s_{status}_{stability}_results",solnum,pyomo_model,time_solved,status)
     return None
 
