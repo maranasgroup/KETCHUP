@@ -8,7 +8,8 @@ sys.path.insert(0, f"{os.getcwd()}/../src/")
 import ktools
 from ktools.io import read_kfit_model_xlsx
 from ktools.io import read_kfit_data_xlsx
-from ktools.io import result_dump, create_sbml_kinetic_model, evaluate_stability
+from ktools.io import result_dump, create_sbml_kinetic_model
+from ktools.ketchup.analysis import evaluate_stability
 from ktools.core import *
 import sys
 
@@ -48,7 +49,7 @@ except NameError:
 experiments = []
 for i,d in enumerate(data_dict.keys()):
     ketchup_model.key = d
-    ketchup_model.add_component(f'experiment{i}', Block(rule=create_sMB))
+    ketchup_model.add_component(f"experiment{i}", Block(rule=create_sMB))
     experiments.append(eval(f"ketchup_model.experiment{i}"))
     print(f"dataset included: {d}")
 

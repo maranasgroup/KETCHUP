@@ -32,7 +32,7 @@ def sbml_check(value: Union[None,int], message: str) -> None:
     else:
         return
 
-def check_reaction_compartment(m_model:cobra.core.model.Model, rxn_id: str) -> list:
+def check_reaction_compartment(m_model: cobra.core.model.Model, rxn_id: str) -> list:
     """Returns list of compartments for the metabolites in selected reaction
     """
     rxn = m_model.reactions.get_by_id(rxn_id)
@@ -41,7 +41,7 @@ def check_reaction_compartment(m_model:cobra.core.model.Model, rxn_id: str) -> l
     ))
     return compartments
 
-def make_valid_sid(sid:str) -> str:
+def make_valid_sid(sid: str) -> str:
     """Returns string that contains only characters valid for use in id attributes.
     Specifically,
     letter ::= 'a'..'z','A'..'Z'
@@ -53,6 +53,7 @@ def make_valid_sid(sid:str) -> str:
     # TODO: use re to substitue other characters to the ASCII or unicode value
     
     sid = sid.replace('+','__plus__')
+    sid = sid.replace('-','__minus__')
     sid = sid.replace('[','__lbrack__')
     sid = sid.replace(']','__rbrack__')
     sid = sid.replace(':','__colon__')
@@ -83,8 +84,8 @@ def v_rate_to_sbml(rate:str, block_id:str) -> str:
         rate = '*'.join(tmp)
     return rate
 
-def create_sbml_kinetic_model(pyomo_model:pyomo.core.base.PyomoModel.ConcreteModel,
-                              block_id:int = 1) -> str:
+def create_sbml_kinetic_model(pyomo_model: pyomo.core.base.PyomoModel.ConcreteModel,
+                              block_id: int = 1) -> str:
     """Returns complete SBML Level 3 model of the kinetic parameterization
     at the solution
     """
