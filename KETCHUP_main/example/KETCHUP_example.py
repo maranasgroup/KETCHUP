@@ -81,11 +81,11 @@ def main() -> None:
 
     seedvalue = ketchup_options['seedvalue']
     
-    result_dump(f"{ketchup_options['output_directory']}{ketchup_options['model_name']}_{status}_results",seedvalue,ketchup_model,time_end - time_start,status)
+    result_dump(f"{ketchup_options['directory_output']}{ketchup_options['model_name']}_{status}_results",seedvalue,ketchup_model,time_end - time_start,status)
 
     # create SBML for the model at the solution and output to file
     kmodel_sbml = create_sbml_kinetic_model(ketchup_model)
-    with open(f"{ketchup_options['output_directory']}{ketchup_options['model_name']}_{status}_results_{seedvalue}.xml", 'w') as output_file:
+    with open(f"{ketchup_options['directory_output']}{ketchup_options['model_name']}_{status}_results_{seedvalue}.xml", 'w') as output_file:
         output_file.write(kmodel_sbml)
 
     return
