@@ -6,6 +6,13 @@ Repository for Kinetic Estimation Tool Capturing Heterogeneous Datasets Using Py
 
 KETCHUP can use K-FIT [2] input files. Example K-FIT input files are located in the K-FIT repository at https://github.com/maranasgroup/K-FIT.
 
+# Installation
+In order to install directly using the environment file provided in the installation directory, anaconda needs to be previously installed. To install a self-contained environment for KETCHUP, activate the anaconda prompt and type:
+```conda env create -f <path to environment.yml file>```
+
+# Eamples and Graphical User Interface
+Command line python examples and a streamlit-based graphical user interface are provided. Please see https://streamlit.io for instructions on installing streamlit.
+
 # Funding
 This work was funded by the DOE Center for Advanced Bioenergy and Bioproducts Innovation (U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research under Award Number DE-SC0018420). Funding provided by The Center for Bioenergy Innovation a U.S. Department of Energy Research Center supported by the Office of Biological and Environmental Research in the DOE Office of Science. Any opinions, findings, and conclusions or recommendations expressed in this publication are those of the author(s) and do not necessarily reflect the views of the U.S. Department of Energy. Funding also provided by the DOE Office of Science, Office of Biological and Environmental Research (Award Number DE-SC0018260). Computations for this research were performed on the Pennsylvania State University’s Institute for Computational and Data Sciences’ Roar supercomputer.
 

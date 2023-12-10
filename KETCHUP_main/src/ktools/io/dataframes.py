@@ -46,7 +46,7 @@ def parse_kfit_model_df(df_metabolite, df_reaction, model_name='model', debug=Fa
         if item not in m.reactions:
             rxn_var = f"R_{tmp_counter}"
             vars()[rxn_var] = cobra.Reaction(item, name=row['Rxn name'])
-            m.add_reaction(vars()[rxn_var])
+            m.add_reactions([vars()[rxn_var]])
             vars()[rxn_var].reaction = (str(row['Rxn Formula']))
             #set upper and lower bounds. done after parsing the formula as the arrows there will affect 
             #  the bounds and K-FIT input files are not consistent on arrow types
