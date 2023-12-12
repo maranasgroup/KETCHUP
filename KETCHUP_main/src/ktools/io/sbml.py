@@ -56,6 +56,8 @@ def make_valid_sid(sid: str) -> str:
     sid = sid.replace('-','__minus__')
     sid = sid.replace('[','__lbrack__')
     sid = sid.replace(']','__rbrack__')
+    sid = sid.replace('(','__lpar__')
+    sid = sid.replace(')','__rpar__')
     sid = sid.replace(':','__colon__')
     sid = sid.replace("'",'__prime__')
     
