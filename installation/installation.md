@@ -35,7 +35,7 @@ conda env create -f environment.yml
 This environment.yml will install all necessary packages. If this step is taken, please skip the steps below.
 However, if manual installation is required or you wish to use a different linear solver asides from the default MUMPS solver, please follow the steps below.
 
-Please note that the manual steps are only validated for Linux systems. Installation of certain packages via Windows system during steps below may result in different package requirements.
+Please note that the manual steps are only validated for Linux systems. Installation of certain packages via Windows system during steps below may result in different package requirements as well as copying ipopt.exe to another location. If any issues are encountered please refer to IPOPT and Pyomo documentation directly for details and troubleshooting.
 
 # Installation steps
 

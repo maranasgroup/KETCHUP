@@ -10,7 +10,7 @@ KETCHUP can use K-FIT [2] input files. Example K-FIT input files are located in 
 In order to install directly using the environment file provided in the installation directory, anaconda needs to be previously installed. To install a self-contained environment for KETCHUP, activate the anaconda prompt and type:
 ```conda env create -f <path to environment.yml file>```
 
-# Eamples and Graphical User Interface
+# Examples and Graphical User Interface
 Command line python examples and a streamlit-based graphical user interface are provided. Please see https://streamlit.io for instructions on installing streamlit.
 
 # Funding
