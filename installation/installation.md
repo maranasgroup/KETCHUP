@@ -28,12 +28,14 @@ Note: All anaconda packages are listed in the provided environment.yml for ease 
 
 Be sure to edit the environment.ylm file and update the prefix directory at the very end of the file to be the absolute path where your anaconda3 environments are stored followed by the desired directory name for the new enviornment at the end.
 
-This updated enviroment can be easily loaded by:
+This updated environment can be easily loaded by:
 ```
-conda create –prefix=$ENV -f environment.yml
+conda env create -f environment.yml
 ```
+This environment.yml will install all necessary packages. If this step is taken, please skip the steps below.
+However, if manual installation is required or you wish to use a different linear solver asides from the default MUMPS solver, please follow the steps below.
 
-If this step is taken skip to step 8 for the installation of IPOPT below.
+Please note that the manual steps are only validated for Linux systems. Installation of certain packages via Windows system during steps below may result in different package requirements.
 
 # Installation steps
 
@@ -57,7 +59,7 @@ $ENV is the python environment directory of your choice. This is where you creat
     <ul><li>&lt;conda install -c conda-forge ipopt==3.14.0&gt;</li></ul>
 </ol>
 
-# Optional: Harwell Subroutine Libraries
+# Optional but recommended: Harwell Subroutine Libraries
 The above protocol will install pyomo and related dependencies to run the toy kinetic model script. However, the automatic installation of ipopt through conda-forge will install the MUMPS linear solver. If you wish you use a different solver, such as the Harwell Subroutine Libraries (HSL), instead of executing step 8, do the following:
 <ol>
 <li>Apply for an academic license for HSL package at https://www.hsl.rl.ac.uk/</li>
@@ -131,8 +133,9 @@ The above protocol will install pyomo and related dependencies to run the toy ki
 
 </ol>
 
-# PARDISO Solver
-<D-c><D-c><D-c><D-c><ol>
+# Optional: PARDISO Solver
+PARDISO is another solver that could also be used within Pyomo with KETCHUP as part of IPOPT. Instructions for this optional solver are the following.
+<ol>
 <li>Download pardiso license and library package from https://pardiso-project.org/</li>
     <ol>
     <li>Download libpardiso600_GNU720-X86-64.so</li>
@@ -175,7 +178,7 @@ The above protocol will install pyomo and related dependencies to run the toy ki
 </ol>
 
 # Additional notes
-If you have already did &lt;make&gt;, &lt;make install&gt; and wish to restart with a clean directory, use the following commands in that directory:
+If you have already ran &lt;make&gt;, &lt;make install&gt; and wish to restart with a clean directory, use the following commands in that directory:
 ```
 make uninstall
 make distclean
