@@ -9,7 +9,7 @@ sys.path.insert(0, f"{os.getcwd()}/../src/")
 import ktools
 from ktools.io import read_kfit_model_xlsx
 from ktools.io import read_kfit_data_xlsx
-from ktools.io import result_dump, create_sbml_kinetic_model, evaluate_stability
+from ktools.io import result_dump, create_sbml_kinetic_model
 from ktools.core import *
 import numpy as np
 import tempfile
