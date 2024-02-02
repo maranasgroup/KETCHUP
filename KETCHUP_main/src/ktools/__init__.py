@@ -1,4 +1,4 @@
-__author__ = "Patrick F. Suthers and MengQui Hu"
+__author__ = "Patrick F. Suthers and MengQi Hu"
 __version__ = "0.03.1"
 
 from ktools import io

@@ -8,7 +8,7 @@ def ketchup_model_options() -> dict:
     model_options = {
         'directory_model' : f"{os.getcwd()}/data/", # location of model files
         'filename_model' : 'model.xlsx',
-        'filename_mechanism' : 'mech.xlsx',
+        'filename_mechanism' : 'mechanism.xlsx',
         'directory_data' : f"{os.getcwd()}/data/", # location of data files
         'filename_data' : 'data.xlsx',
         'directory_output' : f"{os.getcwd()}", # location of output files
