@@ -1783,14 +1783,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_pyr__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_pyr__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_pyr__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_pyr__lpar__e__rpar___ENZ </ci>
                 <ci> S_pyr </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_pyr__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_pyr__lpar__e__rpar___ENZ__plus__pyr__prime__ </ci>
+                <ci> K_kr_EXCH_pyr__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_pyr__lpar__e__rpar___ENZ__plus__pyr </ci>
               </apply>
             </apply>
           </math>
@@ -1809,13 +1809,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_pyr__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_pyr__lpar__e__rpar___ENZ__plus__pyr__prime__ </ci>
+                <ci> K_kf_EXCH_pyr__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_pyr__lpar__e__rpar___ENZ__plus__pyr </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_pyr__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_pyr__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_pyr__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_pyr__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -1835,14 +1835,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_nh4__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_nh4__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_nh4__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_nh4__lpar__e__rpar___ENZ </ci>
                 <ci> S_nh4 </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_nh4__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_nh4__lpar__e__rpar___ENZ__plus__nh4__prime__ </ci>
+                <ci> K_kr_EXCH_nh4__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_nh4__lpar__e__rpar___ENZ__plus__nh4 </ci>
               </apply>
             </apply>
           </math>
@@ -1861,13 +1861,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_nh4__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_nh4__lpar__e__rpar___ENZ__plus__nh4__prime__ </ci>
+                <ci> K_kf_EXCH_nh4__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_nh4__lpar__e__rpar___ENZ__plus__nh4 </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_nh4__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_nh4__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_nh4__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_nh4__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -2232,14 +2232,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_etoh__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_etoh__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_etoh__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_etoh__lpar__e__rpar___ENZ </ci>
                 <ci> S_etoh </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_etoh__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_etoh__lpar__e__rpar___ENZ__plus__etoh__prime__ </ci>
+                <ci> K_kr_EXCH_etoh__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_etoh__lpar__e__rpar___ENZ__plus__etoh </ci>
               </apply>
             </apply>
           </math>
@@ -2258,13 +2258,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_etoh__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_etoh__lpar__e__rpar___ENZ__plus__etoh__prime__ </ci>
+                <ci> K_kf_EXCH_etoh__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_etoh__lpar__e__rpar___ENZ__plus__etoh </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_etoh__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_etoh__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_etoh__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_etoh__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -2363,14 +2363,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_cellobiose__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_cellobiose__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_cellobiose__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_cellobiose__lpar__e__rpar___ENZ </ci>
                 <ci> S_cellbe </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_cellobiose__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_cellobiose__lpar__e__rpar___ENZ__plus__cellbe__prime__ </ci>
+                <ci> K_kr_EXCH_cellobiose__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_cellobiose__lpar__e__rpar___ENZ__plus__cellbe </ci>
               </apply>
             </apply>
           </math>
@@ -2389,13 +2389,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_cellobiose__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_cellobiose__lpar__e__rpar___ENZ__plus__cellbe__prime__ </ci>
+                <ci> K_kf_EXCH_cellobiose__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_cellobiose__lpar__e__rpar___ENZ__plus__cellbe </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_cellobiose__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_cellobiose__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_cellobiose__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_cellobiose__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -3157,14 +3157,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_h2__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_h2__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_h2__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_h2__lpar__e__rpar___ENZ </ci>
                 <ci> S_h2 </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_h2__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_h2__lpar__e__rpar___ENZ__plus__h2__prime__ </ci>
+                <ci> K_kr_EXCH_h2__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_h2__lpar__e__rpar___ENZ__plus__h2 </ci>
               </apply>
             </apply>
           </math>
@@ -3183,13 +3183,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_h2__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_h2__lpar__e__rpar___ENZ__plus__h2__prime__ </ci>
+                <ci> K_kf_EXCH_h2__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_h2__lpar__e__rpar___ENZ__plus__h2 </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_h2__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_h2__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_h2__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_h2__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -4007,14 +4007,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_lac__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_lac__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_lac__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_lac__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_lac__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_lac__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_lac__minus__l__lpar__e__rpar___ENZ__plus__lac__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_lac__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_lac__minus__l__lpar__e__rpar___ENZ__plus__lac__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -4033,13 +4033,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_lac__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_lac__minus__l__lpar__e__rpar___ENZ__plus__lac__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_lac__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_lac__minus__l__lpar__e__rpar___ENZ__plus__lac__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_lac__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_lac__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_lac__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_lac__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -4537,14 +4537,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ac__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ac__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_ac__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ac__lpar__e__rpar___ENZ </ci>
                 <ci> S_ac </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ac__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ac__lpar__e__rpar___ENZ__plus__ac__prime__ </ci>
+                <ci> K_kr_EXCH_ac__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ac__lpar__e__rpar___ENZ__plus__ac </ci>
               </apply>
             </apply>
           </math>
@@ -4563,13 +4563,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ac__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ac__lpar__e__rpar___ENZ__plus__ac__prime__ </ci>
+                <ci> K_kf_EXCH_ac__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ac__lpar__e__rpar___ENZ__plus__ac </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ac__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ac__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_ac__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ac__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -4589,14 +4589,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_for__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_for__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_for__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_for__lpar__e__rpar___ENZ </ci>
                 <ci> S_for </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_for__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_for__lpar__e__rpar___ENZ__plus__for__prime__ </ci>
+                <ci> K_kr_EXCH_for__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_for__lpar__e__rpar___ENZ__plus__for </ci>
               </apply>
             </apply>
           </math>
@@ -4615,13 +4615,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_for__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_for__lpar__e__rpar___ENZ__plus__for__prime__ </ci>
+                <ci> K_kf_EXCH_for__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_for__lpar__e__rpar___ENZ__plus__for </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_for__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_for__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_for__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_for__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -4641,14 +4641,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_co2__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_co2__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_co2__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_co2__lpar__e__rpar___ENZ </ci>
                 <ci> S_co2 </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_co2__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_co2__lpar__e__rpar___ENZ__plus__co2__prime__ </ci>
+                <ci> K_kr_EXCH_co2__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_co2__lpar__e__rpar___ENZ__plus__co2 </ci>
               </apply>
             </apply>
           </math>
@@ -4667,13 +4667,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_co2__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_co2__lpar__e__rpar___ENZ__plus__co2__prime__ </ci>
+                <ci> K_kf_EXCH_co2__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_co2__lpar__e__rpar___ENZ__plus__co2 </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_co2__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_co2__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_co2__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_co2__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -12841,14 +12841,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ppi__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ppi__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_ppi__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ppi__lpar__e__rpar___ENZ </ci>
                 <ci> S_ppi </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ppi__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ppi__lpar__e__rpar___ENZ__plus__ppi__prime__ </ci>
+                <ci> K_kr_EXCH_ppi__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ppi__lpar__e__rpar___ENZ__plus__ppi </ci>
               </apply>
             </apply>
           </math>
@@ -12867,13 +12867,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ppi__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ppi__lpar__e__rpar___ENZ__plus__ppi__prime__ </ci>
+                <ci> K_kf_EXCH_ppi__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ppi__lpar__e__rpar___ENZ__plus__ppi </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ppi__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ppi__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_ppi__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ppi__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -12893,14 +12893,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_h2s__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_h2s__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_h2s__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_h2s__lpar__e__rpar___ENZ </ci>
                 <ci> S_h2s </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_h2s__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_h2s__lpar__e__rpar___ENZ__plus__h2s__prime__ </ci>
+                <ci> K_kr_EXCH_h2s__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_h2s__lpar__e__rpar___ENZ__plus__h2s </ci>
               </apply>
             </apply>
           </math>
@@ -12919,13 +12919,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_h2s__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_h2s__lpar__e__rpar___ENZ__plus__h2s__prime__ </ci>
+                <ci> K_kf_EXCH_h2s__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_h2s__lpar__e__rpar___ENZ__plus__h2s </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_h2s__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_h2s__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_h2s__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_h2s__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -12945,14 +12945,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_asp__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_asp__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_asp__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_asp__lpar__e__rpar___ENZ </ci>
                 <ci> S_asp__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_asp__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_asp__lpar__e__rpar___ENZ__plus__asp__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_asp__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_asp__lpar__e__rpar___ENZ__plus__asp__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -12971,13 +12971,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_asp__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_asp__lpar__e__rpar___ENZ__plus__asp__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_asp__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_asp__lpar__e__rpar___ENZ__plus__asp__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_asp__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_asp__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_asp__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_asp__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -12997,14 +12997,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_mal__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_mal__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_mal__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_mal__lpar__e__rpar___ENZ </ci>
                 <ci> S_mal__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_mal__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_mal__lpar__e__rpar___ENZ__plus__mal__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_mal__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_mal__lpar__e__rpar___ENZ__plus__mal__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13023,13 +13023,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_mal__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_mal__lpar__e__rpar___ENZ__plus__mal__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_mal__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_mal__lpar__e__rpar___ENZ__plus__mal__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_mal__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_mal__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_mal__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_mal__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13049,14 +13049,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_pro__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_pro__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_pro__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_pro__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_pro__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_pro__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_pro__minus__l__lpar__e__rpar___ENZ__plus__pro__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_pro__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_pro__minus__l__lpar__e__rpar___ENZ__plus__pro__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13075,13 +13075,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_pro__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_pro__minus__l__lpar__e__rpar___ENZ__plus__pro__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_pro__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_pro__minus__l__lpar__e__rpar___ENZ__plus__pro__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_pro__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_pro__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_pro__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_pro__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13101,14 +13101,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_gln__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_gln__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_gln__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_gln__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_gln__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_gln__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_gln__minus__l__lpar__e__rpar___ENZ__plus__gln__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_gln__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_gln__minus__l__lpar__e__rpar___ENZ__plus__gln__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13127,13 +13127,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_gln__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_gln__minus__l__lpar__e__rpar___ENZ__plus__gln__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_gln__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_gln__minus__l__lpar__e__rpar___ENZ__plus__gln__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_gln__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_gln__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_gln__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_gln__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13153,14 +13153,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_glu__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_glu__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_glu__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_glu__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_glu__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_glu__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_glu__minus__l__lpar__e__rpar___ENZ__plus__glu__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_glu__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_glu__minus__l__lpar__e__rpar___ENZ__plus__glu__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13179,13 +13179,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_glu__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_glu__minus__l__lpar__e__rpar___ENZ__plus__glu__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_glu__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_glu__minus__l__lpar__e__rpar___ENZ__plus__glu__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_glu__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_glu__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_glu__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_glu__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13205,14 +13205,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_val__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_val__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_val__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_val__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_val__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_val__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_val__minus__l__lpar__e__rpar___ENZ__plus__val__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_val__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_val__minus__l__lpar__e__rpar___ENZ__plus__val__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13231,13 +13231,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_val__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_val__minus__l__lpar__e__rpar___ENZ__plus__val__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_val__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_val__minus__l__lpar__e__rpar___ENZ__plus__val__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_val__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_val__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_val__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_val__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13257,14 +13257,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ala__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ala__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_ala__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ala__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_ala__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ala__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ala__minus__l__lpar__e__rpar___ENZ__plus__ala__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_ala__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ala__minus__l__lpar__e__rpar___ENZ__plus__ala__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13283,13 +13283,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ala__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ala__minus__l__lpar__e__rpar___ENZ__plus__ala__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_ala__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ala__minus__l__lpar__e__rpar___ENZ__plus__ala__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ala__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ala__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_ala__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ala__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13309,14 +13309,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ile__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ile__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_ile__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ile__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_ile__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ile__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ile__minus__l__lpar__e__rpar___ENZ__plus__ile__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_ile__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ile__minus__l__lpar__e__rpar___ENZ__plus__ile__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13335,13 +13335,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ile__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ile__minus__l__lpar__e__rpar___ENZ__plus__ile__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_ile__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ile__minus__l__lpar__e__rpar___ENZ__plus__ile__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ile__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ile__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_ile__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ile__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13361,14 +13361,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_leu__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_leu__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_leu__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_leu__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_leu__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_leu__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_leu__minus__l__lpar__e__rpar___ENZ__plus__leu__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_leu__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_leu__minus__l__lpar__e__rpar___ENZ__plus__leu__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13387,13 +13387,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_leu__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_leu__minus__l__lpar__e__rpar___ENZ__plus__leu__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_leu__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_leu__minus__l__lpar__e__rpar___ENZ__plus__leu__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_leu__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_leu__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_leu__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_leu__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13413,14 +13413,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ibo__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ibo__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_ibo__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ibo__lpar__e__rpar___ENZ </ci>
                 <ci> S_ibo </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ibo__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_ibo__lpar__e__rpar___ENZ__plus__ibo__prime__ </ci>
+                <ci> K_kr_EXCH_ibo__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_ibo__lpar__e__rpar___ENZ__plus__ibo </ci>
               </apply>
             </apply>
           </math>
@@ -13439,13 +13439,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_ibo__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ibo__lpar__e__rpar___ENZ__plus__ibo__prime__ </ci>
+                <ci> K_kf_EXCH_ibo__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ibo__lpar__e__rpar___ENZ__plus__ibo </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_ibo__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_ibo__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_ibo__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_ibo__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13465,14 +13465,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_pep__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_pep__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_pep__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_pep__lpar__e__rpar___ENZ </ci>
                 <ci> S_pep </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_pep__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_pep__lpar__e__rpar___ENZ__plus__pep__prime__ </ci>
+                <ci> K_kr_EXCH_pep__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_pep__lpar__e__rpar___ENZ__plus__pep </ci>
               </apply>
             </apply>
           </math>
@@ -13491,13 +13491,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_pep__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_pep__lpar__e__rpar___ENZ__plus__pep__prime__ </ci>
+                <ci> K_kf_EXCH_pep__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_pep__lpar__e__rpar___ENZ__plus__pep </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_pep__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_pep__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_pep__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_pep__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13517,14 +13517,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_2dda7p__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_2dda7p__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_2dda7p__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_2dda7p__lpar__e__rpar___ENZ </ci>
                 <ci> S_2dda7p </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_2dda7p__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_2dda7p__lpar__e__rpar___ENZ__plus__2dda7p__prime__ </ci>
+                <ci> K_kr_EXCH_2dda7p__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_2dda7p__lpar__e__rpar___ENZ__plus__2dda7p </ci>
               </apply>
             </apply>
           </math>
@@ -13543,13 +13543,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_2dda7p__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_2dda7p__lpar__e__rpar___ENZ__plus__2dda7p__prime__ </ci>
+                <ci> K_kf_EXCH_2dda7p__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_2dda7p__lpar__e__rpar___ENZ__plus__2dda7p </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_2dda7p__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_2dda7p__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_2dda7p__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_2dda7p__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>
@@ -13569,14 +13569,14 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_cys__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_cys__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kf_EXCH_cys__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_cys__minus__l__lpar__e__rpar___ENZ </ci>
                 <ci> S_cys__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_cys__minus__l__lpar__e__rpar___0__prime__ </ci>
-                <ci> E___prime__EXCH_cys__minus__l__lpar__e__rpar___ENZ__plus__cys__minus__L__prime__ </ci>
+                <ci> K_kr_EXCH_cys__minus__l__lpar__e__rpar___0 </ci>
+                <ci> E_EXCH_cys__minus__l__lpar__e__rpar___ENZ__plus__cys__minus__L </ci>
               </apply>
             </apply>
           </math>
@@ -13595,13 +13595,13 @@
               <minus/>
               <apply>
                 <times/>
-                <ci> K_kf___prime__EXCH_cys__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_cys__minus__l__lpar__e__rpar___ENZ__plus__cys__minus__L__prime__ </ci>
+                <ci> K_kf_EXCH_cys__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_cys__minus__l__lpar__e__rpar___ENZ__plus__cys__minus__L </ci>
               </apply>
               <apply>
                 <times/>
-                <ci> K_kr___prime__EXCH_cys__minus__l__lpar__e__rpar___1__prime__ </ci>
-                <ci> E___prime__EXCH_cys__minus__l__lpar__e__rpar___ENZ__prime__ </ci>
+                <ci> K_kr_EXCH_cys__minus__l__lpar__e__rpar___1 </ci>
+                <ci> E_EXCH_cys__minus__l__lpar__e__rpar___ENZ </ci>
               </apply>
             </apply>
           </math>

@@ -4405,12 +4405,12 @@
                 <times/>
                 <ci> K_kf_PTS_R4_0 </ci>
                 <ci> E_PTS_R4_ENZ </ci>
-                <ci> S___prime__glcD__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_glcD__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_PTS_R4_0 </ci>
-                <ci> E___prime__PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -4431,13 +4431,13 @@
               <apply>
                 <times/>
                 <ci> K_kf_PTS_R4_1 </ci>
-                <ci> E___prime__PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack__ </ci>
                 <ci> S_EIIP </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_PTS_R4_1 </ci>
-                <ci> E___prime__PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack____plus__EIIP__prime__ </ci>
+                <ci> E_PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack____plus__EIIP </ci>
               </apply>
             </apply>
           </math>
@@ -4457,7 +4457,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_PTS_R4_2 </ci>
-                <ci> E___prime__PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack____plus__EIIP__prime__ </ci>
+                <ci> E_PTS_R4_ENZ__plus__glcD__lbrack__e__rbrack____plus__EIIP </ci>
               </apply>
               <apply>
                 <times/>
@@ -34191,12 +34191,12 @@
                 <times/>
                 <ci> K_kf_gluc_up_0 </ci>
                 <ci> E_gluc_up_ENZ </ci>
-                <ci> S___prime__glcD__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_glcD__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_gluc_up_0 </ci>
-                <ci> E___prime__gluc_up_ENZ__plus__glcD__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_gluc_up_ENZ__plus__glcD__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34216,7 +34216,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_gluc_up_1 </ci>
-                <ci> E___prime__gluc_up_ENZ__plus__glcD__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_gluc_up_ENZ__plus__glcD__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34273,7 +34273,7 @@
               <apply>
                 <times/>
                 <ci> K_kr_ac_out_1 </ci>
-                <ci> E___prime__ac_out_ENZ__plus__ac__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_ac_out_ENZ__plus__ac__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34294,13 +34294,13 @@
               <apply>
                 <times/>
                 <ci> K_kf_ac_out_2 </ci>
-                <ci> E___prime__ac_out_ENZ__plus__ac__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_ac_out_ENZ__plus__ac__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_ac_out_2 </ci>
                 <ci> E_ac_out_ENZ </ci>
-                <ci> S___prime__ac__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_ac__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34352,7 +34352,7 @@
               <apply>
                 <times/>
                 <ci> K_kr_co2_out_1 </ci>
-                <ci> E___prime__co2_out_ENZ__plus__co2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_co2_out_ENZ__plus__co2__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34373,13 +34373,13 @@
               <apply>
                 <times/>
                 <ci> K_kf_co2_out_2 </ci>
-                <ci> E___prime__co2_out_ENZ__plus__co2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_co2_out_ENZ__plus__co2__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_co2_out_2 </ci>
                 <ci> E_co2_out_ENZ </ci>
-                <ci> S___prime__co2__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_co2__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34401,12 +34401,12 @@
                 <times/>
                 <ci> K_kf_o2_in_0 </ci>
                 <ci> E_o2_in_ENZ </ci>
-                <ci> S___prime__O2__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_O2__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_o2_in_0 </ci>
-                <ci> E___prime__o2_in_ENZ__plus__O2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_o2_in_ENZ__plus__O2__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34426,7 +34426,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_o2_in_1 </ci>
-                <ci> E___prime__o2_in_ENZ__plus__O2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_o2_in_ENZ__plus__O2__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34480,12 +34480,12 @@
                 <times/>
                 <ci> K_kf_R72_0 </ci>
                 <ci> E_R72_ENZ </ci>
-                <ci> S___prime__NH3__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_NH3__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_R72_0 </ci>
-                <ci> E___prime__R72_ENZ__plus__NH3__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_R72_ENZ__plus__NH3__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34505,7 +34505,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_R72_1 </ci>
-                <ci> E___prime__R72_ENZ__plus__NH3__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_R72_ENZ__plus__NH3__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34559,12 +34559,12 @@
                 <times/>
                 <ci> K_kf_R73_0 </ci>
                 <ci> E_R73_ENZ </ci>
-                <ci> S___prime__SO4__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_SO4__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_R73_0 </ci>
-                <ci> E___prime__R73_ENZ__plus__SO4__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_R73_ENZ__plus__SO4__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34584,7 +34584,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_R73_1 </ci>
-                <ci> E___prime__R73_ENZ__plus__SO4__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_R73_ENZ__plus__SO4__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34638,12 +34638,12 @@
                 <times/>
                 <ci> K_kf_EX_ac_0 </ci>
                 <ci> E_EX_ac_ENZ </ci>
-                <ci> S___prime__ac__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_ac__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_EX_ac_0 </ci>
-                <ci> E___prime__EX_ac_ENZ__plus__ac__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_ac_ENZ__plus__ac__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34663,7 +34663,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_EX_ac_1 </ci>
-                <ci> E___prime__EX_ac_ENZ__plus__ac__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_ac_ENZ__plus__ac__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34690,12 +34690,12 @@
                 <times/>
                 <ci> K_kf_EX_co2_0 </ci>
                 <ci> E_EX_co2_ENZ </ci>
-                <ci> S___prime__co2__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_co2__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_EX_co2_0 </ci>
-                <ci> E___prime__EX_co2_ENZ__plus__co2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_co2_ENZ__plus__co2__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34715,7 +34715,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_EX_co2_1 </ci>
-                <ci> E___prime__EX_co2_ENZ__plus__co2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_co2_ENZ__plus__co2__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34742,12 +34742,12 @@
                 <times/>
                 <ci> K_kf_EX_O2_0 </ci>
                 <ci> E_EX_O2_ENZ </ci>
-                <ci> S___prime__O2__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_O2__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_EX_O2_0 </ci>
-                <ci> E___prime__EX_O2_ENZ__plus__O2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_O2_ENZ__plus__O2__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34767,7 +34767,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_EX_O2_1 </ci>
-                <ci> E___prime__EX_O2_ENZ__plus__O2__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_O2_ENZ__plus__O2__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34794,12 +34794,12 @@
                 <times/>
                 <ci> K_kf_EX_NH3_0 </ci>
                 <ci> E_EX_NH3_ENZ </ci>
-                <ci> S___prime__NH3__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_NH3__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_EX_NH3_0 </ci>
-                <ci> E___prime__EX_NH3_ENZ__plus__NH3__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_NH3_ENZ__plus__NH3__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34819,7 +34819,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_EX_NH3_1 </ci>
-                <ci> E___prime__EX_NH3_ENZ__plus__NH3__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_NH3_ENZ__plus__NH3__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
@@ -34846,12 +34846,12 @@
                 <times/>
                 <ci> K_kf_EX_SO4_0 </ci>
                 <ci> E_EX_SO4_ENZ </ci>
-                <ci> S___prime__SO4__lbrack__e__rbrack____prime__ </ci>
+                <ci> S_SO4__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>
                 <ci> K_kr_EX_SO4_0 </ci>
-                <ci> E___prime__EX_SO4_ENZ__plus__SO4__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_SO4_ENZ__plus__SO4__lbrack__e__rbrack__ </ci>
               </apply>
             </apply>
           </math>
@@ -34871,7 +34871,7 @@
               <apply>
                 <times/>
                 <ci> K_kf_EX_SO4_1 </ci>
-                <ci> E___prime__EX_SO4_ENZ__plus__SO4__lbrack__e__rbrack____prime__ </ci>
+                <ci> E_EX_SO4_ENZ__plus__SO4__lbrack__e__rbrack__ </ci>
               </apply>
               <apply>
                 <times/>

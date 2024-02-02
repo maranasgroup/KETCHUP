@@ -51,6 +51,10 @@ def make_valid_sid(sid: str) -> str:
     # This code substitutes some items with predefined substituions
     
     # TODO: use re to substitue other characters to the ASCII or unicode value
+
+    # Check if item is a nested string such as "'a'" and reduce to only inner string
+    if (sid[0] == "'" and sid[-1] == "'") or (sid[0] == '"' and sid[-1] == '"'):
+        sid = sid[1:-1]
     
     sid = sid.replace('+','__plus__')
     sid = sid.replace('-','__minus__')
