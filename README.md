@@ -18,6 +18,6 @@ This work was funded by the DOE Center for Advanced Bioenergy and Bioproducts In
 
 # References
 <ol>
- <li> Mengqi Hu, Patrick F. Suthers, Costas D. Maranas. KETCHUP: parameterizing of large-scale kinetic models using multiple datasets with different reference states. Metab Eng, 2024, https://doi.org/10.1016/j.ymben.2024.02.002</li>
- <li>Saratram Gopalakrishnan, Satyakam Dash, and Costas D. Maranas, “K-FIT: An accelerated kinetic parameterization algorithm using steady-state fluxomic data,” Metab Eng, vol. 61, no. January, pp. 197–205, 2020, https://doi.org/10.1016/j.ymben.2020.03.001</li>
+ <li> Mengqi Hu, Patrick F. Suthers, Costas D. Maranas, 2024. “KETCHUP: Parameterizing of large-scale kinetic models using multiple datasets with different reference states.” Metab. Eng., 82 (March), pp. 123–133. https://doi.org/10.1016/j.ymben.2024.02.002</li>
+ <li>Saratram Gopalakrishnan, Satyakam Dash, and Costas D. Maranas, 2020. “K-FIT: An accelerated kinetic parameterization algorithm using steady-state fluxomic data.” Metab. Eng., 61 (January), pp. 197–205. https://doi.org/10.1016/j.ymben.2020.03.001</li>
 </ol>
