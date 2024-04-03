@@ -16,8 +16,8 @@ def ketchup_model_options() -> dict:
         }
 
     # secondary items
-    model_options['debug'] = False # default for all functions is False. change to True for additional runtime output
-
+    model_options['debug'] = False # change to True for additional runtime output
+    model_options['flag_output_sbml'] = True # flag to output results to SBML file
     model_options['mechanism_type'] = 'elemental' # rate law to follow
 
     # set seed for random number generator
@@ -126,9 +126,9 @@ def run_streamlit_gui() -> None:
             result_dump(f"{ketchup_options['directory_output']}{ketchup_options['model_name']}_{status}_results",seedvalue,ketchup_model,time_end - time_start,status)
 
 
-            if True:
+            if ketchup_options['flag_output_sbml']:
                 kmodel_sbml = create_sbml_kinetic_model(ketchup_model)
-                with open(f"{model_name}_{status}_results_{seedvalue}.xml", 'w') as output_file:
+                with open(f"{ketchup_options['model_name']}_{status}_results_{seedvalue}.xml", 'w') as output_file:
                     output_file.write(kmodel_sbml)
             pass
 
