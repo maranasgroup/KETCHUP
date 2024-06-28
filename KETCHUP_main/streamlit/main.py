@@ -6,6 +6,7 @@ def ketchup_model_options() -> dict:
     
     # primary items
     model_options = {
+        'input_format' : 'kfit', # flag for kind of input files
         'directory_model' : f"{os.getcwd()}/data/", # location of model files
         'filename_model' : 'model.xlsx',
         'filename_mechanism' : 'mechanism.xlsx',
