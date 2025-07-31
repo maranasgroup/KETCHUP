@@ -141,7 +141,7 @@ def create_initial_model(m_model,mech_df,data,seedvalue=None,time=None,tde = 0, 
     model.data = data
     model.mech_type = mech_type
 
-    e_scale = 5000
+    e_scale = k_thres
     ##INITIAL ELEMENTAL MODEL
     if mech_type == 'elemental':
         model.rxn_enz_sum = {rxn:[[item for sublist in mech_df['product'].loc[mech_df['rxn ID'] == rxn].tolist() for item in sublist if 'ENZ' in item],1] 
@@ -353,7 +353,7 @@ def create_dMB(b):
     #reconfigure for time course
     model.error = Var(bounds=(0,None))  
     model.compute_error = Constraint(
-         expr = model.error == (1/len(error_data))*sum(
+         expr = model.error == sum(
                        (model.c[t[0],'nadh'] - t[1])**2
                        for t in error_data
                                   )

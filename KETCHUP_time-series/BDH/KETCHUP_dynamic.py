@@ -73,7 +73,7 @@ def main() -> None:
     from ktools.io import result_dump, create_sbml_kinetic_model
     from ktools.ketchup.analysis import evaluate_stability, infeasible_constraints
     from timeit import default_timer as timer
-
+    from pyomo.environ import Constraint, Var
     # first read in the model and data files. Edit ketchup_model_options() for the
     # specific problem.
 
@@ -83,6 +83,12 @@ def main() -> None:
 
     ketchup_model = ketchup_generate_model(ketchup_options)
     ketchup_model.K_decomp.bounds = (0.0012858055417827694,0.0012866684094938047)
+
+    #haldane relationship
+    ketchup_model.add_component('Keq' , Var(bounds=(1256,30203) ))
+    ketchup_model.add_component('Haldane', Constraint(expr = 
+    ketchup_model.Kcat_f['BDH']*ketchup_model.KM_products['BDH+23bd']*ketchup_model.KM_products['BDH+nad'] / ketchup_model.Kcat_r['BDH'] * ketchup_model.KM_reactants['BDH+acetoin'] * ketchup_model.KM_reactants['BDH+nadh'] == ketchup_model.Keq )
+    )
 
     # solve the ketchup model
 
@@ -103,7 +109,7 @@ def main() -> None:
     seedvalue = ketchup_options['seedvalue']
     
     result_dump(f"{ketchup_options['directory_output']}/{ketchup_options['model_name']}_{status}_results_{ketchup_options['filename_data'][:-5].replace('tde_filter_','').split('_')[1]}",seedvalue,ketchup_model,time_end - time_start,status)
-
+    ketchup_model.Keq.pprint()
     # create SBML for the model at the solution and output to file
     #kmodel_sbml = create_sbml_kinetic_model(ketchup_model)
     #with open(f"{ketchup_options['directory_output']}/{ketchup_options['model_name']}_{status}_results_{model_options['seedvalue']}.xml", 'w') as output_file:
