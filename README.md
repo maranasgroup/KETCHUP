@@ -9,11 +9,17 @@ KETCHUP can use K-FIT [2] input files. Example K-FIT input files are located in 
 KETCHUP is extended to time-series data [3].
 
 # Installation
-In order to install directly using the environment file provided in the installation directory, anaconda needs to be previously installed. To install a self-contained environment for KETCHUP, activate the anaconda prompt and type:
+In order to install directly using the environment file provided in the installation directory, anaconda needs to be previously installed. To install a self-contained environment for KETCHUP, activate your anaconda environment and at the command line type:
 ```conda env create -f <path to environment.yml file>```
+
+Installation documentation is located in the ```doc``` subdirectory.
 
 # Examples and Graphical User Interface
 Command line python examples and a streamlit-based graphical user interface are provided. Please see https://streamlit.io for instructions on installing streamlit.
+
+# Manuscript Supplementary Materials
+
+Files specifically associated with publications involving KETCHUP development are located in the ```Manuscript Supplementary Materials``` directory. These files are not required for KETCHUP to function.
 
 # Funding
 This work was funded by the DOE Center for Advanced Bioenergy and Bioproducts Innovation (U.S. Department of Energy, Office of Science, Biological and Environmental Research Program under Award Number DE-SC0018420). This material is based upon work supported by the Center for Bioenergy Innovation (CBI), U.S. Department of Energy, Office of Science, Biological and Environmental Research Program under Award Number ERKP886. Funding also provided by the DOE Office of Science, Biological and Environmental Research Program Award Number DE-SC0018260. Any opinions, findings, and conclusions or recommendations expressed herein are those of the author(s) and do not necessarily reflect the views of the U.S. Department of Energy. Computations for this research were performed on the Pennsylvania State University’s Institute for Computational and Data Sciences’ Roar supercomputer.
