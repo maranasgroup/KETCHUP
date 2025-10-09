@@ -19,10 +19,10 @@ conda env create -f <path to ketchup_environment.yml file>
 For further information, please follow the detailed installation documentation located in the [``doc`` subdirectory](doc).
 
 # Examples and Graphical User Interface
-Command line python examples and a streamlit-based graphical user interface are provided. Please see https://streamlit.io for instructions on installing streamlit. Streamlit is included in our suggested anaconda environment.
+Command line python examples and a streamlit-based graphical user interface are provided in the [``example`` subdirectory](KETCHUP_main/example). Please see https://streamlit.io for instructions on installing streamlit. Streamlit is included in our suggested anaconda environment.
 
 # Manuscript Supplementary Materials
-Files specifically associated with publications involving KETCHUP development are located in the ```Manuscript Supplementary Materials``` directory. These files are not required for KETCHUP to function.
+Files specifically associated with publications involving KETCHUP development are located in the [``Manuscript Supplementary Materials`` directory](Manuscript%20Supplementary%20Materials). These files are not required for KETCHUP to function.
 
 # Funding
 This work was funded by the DOE Center for Advanced Bioenergy and Bioproducts Innovation (U.S. Department of Energy, Office of Science, Biological and Environmental Research Program under Award Number DE-SC0018420). This material is based upon work supported by the Center for Bioenergy Innovation (CBI), U.S. Department of Energy, Office of Science, Biological and Environmental Research Program under Award Number ERKP886. Funding also provided by the DOE Office of Science, Biological and Environmental Research Program Award Number DE-SC0018260. Any opinions, findings, and conclusions or recommendations expressed herein are those of the author(s) and do not necessarily reflect the views of the U.S. Department of Energy. Computations for this research were performed on the Pennsylvania State University’s Institute for Computational and Data Sciences’ Roar supercomputer.
