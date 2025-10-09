@@ -9,16 +9,19 @@ KETCHUP can use K-FIT [2] input files. Example K-FIT input files are located in 
 KETCHUP is extended to time-series data [3].
 
 # Installation
-In order to install directly using the environment file provided in the installation directory, anaconda needs to be previously installed. To install a self-contained environment for KETCHUP, activate your anaconda environment and at the command line type:
-```conda env create -f <path to environment.yml file>```
+You can download the KETCHUP repository and run it with python. 
+We recommend installing it within a self-contained virtual environment using Anaconda. You can set one up from the [YAML environment file](installation/ketchup_environment.yml) in the [``installation``](installation) subdirectory by importing it using Anaconda Navigator or via the command line using:
 
-Installation documentation is located in the ```doc``` subdirectory.
+````console
+conda env create -f <path to ketchup_environment.yml file>
+````
+
+For further information, please follow the detailed installation documentation located in the [``doc`` subdirectory](doc).
 
 # Examples and Graphical User Interface
-Command line python examples and a streamlit-based graphical user interface are provided. Please see https://streamlit.io for instructions on installing streamlit.
+Command line python examples and a streamlit-based graphical user interface are provided. Please see https://streamlit.io for instructions on installing streamlit. Streamlit is included in our suggested anaconda environment.
 
 # Manuscript Supplementary Materials
-
 Files specifically associated with publications involving KETCHUP development are located in the ```Manuscript Supplementary Materials``` directory. These files are not required for KETCHUP to function.
 
 # Funding
