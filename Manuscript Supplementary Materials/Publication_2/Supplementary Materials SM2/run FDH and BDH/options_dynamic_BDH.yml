@@ -1,0 +1,25 @@
+---
+# KETCHUP options file for KETCHUP_example.py
+## Primary options
+input_format: kfit # flag for kind of input files
+directory_model: "./data/" # location of model files
+filename_model: BDH_model.xlsx
+filename_mechanism: BDH_mechanism.xlsx
+directory_data: "./data/" # location of data files
+filename_data: BDH_dataset_series_Z1.xlsx
+data_type: dynamic # static or dynamic data
+data_format: strainer
+directory_output: "." # location of output files
+model_name: BDH
+## Secondary options
+debug: False # change to True for additional runtime output
+flag_output_sbml: False # flag to output results to SBML file
+mechanism_type: custom
+seedvalue: 0 # integer or "time" to use clock time 
+distribution: uniform
+filename_solver_opt: ipopt.opt
+data_strainer_header: {"t_0": ["bdh", "23bdo", "actn", "nad", "formate", "nadh", "pyr"], "time": ["nadh"],
+                        "type": ["e", "c", "c", "c", "c", "c", "c", "c"],
+                        "status": ["i", "g", "g", "i", "i", "i", "i", "d"]}
+time_delay: 0
+...
