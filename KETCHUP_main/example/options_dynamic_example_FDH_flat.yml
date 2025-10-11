@@ -1,0 +1,21 @@
+---
+# KETCHUP options file for KETCHUP_example.py
+## Primary options
+input_format: kfit # flag for kind of input files
+directory_model: "./data/" # location of model files
+filename_model: FDH_model.xlsx
+filename_mechanism: FDH_mechanism.xlsx
+directory_data: "./data/" # location of data files
+filename_data: FDH_dataset_series_A1.tsv
+data_type: dynamic # static or dynamic data
+data_format: flat
+directory_output: "." # location of output files
+model_name: FDH
+## Secondary options
+debug: False # change to True for additional runtime output
+flag_output_sbml: False # flag to output results to SBML file
+mechanism_type: custom
+seedvalue: 0 # integer or "time" to use clock time 
+distribution: uniform
+filename_solver_opt: ipopt.opt
+...

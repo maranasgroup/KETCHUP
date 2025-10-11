@@ -2,13 +2,33 @@
 Parsing of dataframes for import.
 
 Parsing of K-FIT derived dataframes of model and mechanism data.
+Parsing of Strainer derived dataframes of data.
 
 """
 import cobra
 import pandas as pd
 
-def parse_kfit_model_df(df_metabolite, df_reaction, model_name='model', debug=False):
-    """ Parse the DataFrames of the K-FIT model inputs and convert into COBRApy model. 
+
+def parse_kfit_model_df(df_metabolite: pd.DataFrame, df_reaction: pd.DataFrame,
+                        model_name: str = 'model', debug: bool = False) -> cobra.core.model.Model:
+    """
+    Parse the DataFrames of the K-FIT model inputs and convert them into a COBRApy model.
+
+    Parameters
+    ----------
+    df_metabolite : pd.DataFrame
+        DataFrame containing metabolite information.
+    df_reaction : pd.DataFrame
+        DataFrame containing reaction information.
+    model_name : str, optional
+        Name to use for the model.
+    debug : bool, optional
+        If True, prints debug messages. Defaults to False.
+
+    Returns
+    -------
+    cobra.core.model.Mode
+        The generated COBRApy model.
     """
 
     m = cobra.Model(model_name)
@@ -38,7 +58,7 @@ def parse_kfit_model_df(df_metabolite, df_reaction, model_name='model', debug=Fa
             tmp_counter += 1
 
     #display(model)
-
+    #print (df_reaction)
     # serialize the reactions, using (temporary) names that we know will be acceptable python variable names
     tmp_counter = 1
     for idx, row in df_reaction.iterrows():
@@ -52,17 +72,47 @@ def parse_kfit_model_df(df_metabolite, df_reaction, model_name='model', debug=Fa
             #  the bounds and K-FIT input files are not consistent on arrow types
             vars()[rxn_var].lower_bound=row['Lower bound']
             vars()[rxn_var].upper_bound=row['Upper bound']
+            try:
+                if row['Enzyme ID']:
+                    #print (row['Enzyme ID'])
+                    vars()[rxn_var].gene_reaction_rule=row['Enzyme ID']
+            except:
+                pass
             # TODO: add sbo to reactions
             tmp_counter += 1
 
     if debug:
         print(f'COBRA model with name {model_name} created')
+
     return m
 
-def parse_kfit_mech_df(df_mechanism, m_model=None, model_name='model',
-                       mech_type='elemental', debug=False, testing_flag=False):
-    """ Parse the DataFrames of the K-FIT mechanism inputs and convert into COBRApy model.
+
+def parse_kfit_mech_df(df_mechanism: pd.DataFrame, m_model: cobra.core.model.Model = None, model_name: str = 'model',
+                       mech_type: str = 'elemental', debug: bool = False, testing_flag: bool = False) -> pd.DataFrame:
+    """
+    Parse the DataFrames of the K-FIT mechanism inputs and generate the full reactions DataFrame.
     Uses the COBRA model so validate the reaction and metabolite ids.
+
+    Parameters
+    ----------
+    df_mechanism : pd.DataFrame
+        DataFrame containing mechanism information.
+    m_model : cobra.core.model.Model
+        COBRApy model for the reaction system.
+    model_name : str, optional
+        Name to use for the model.
+    mech_type: str
+        Enzyme mechanism to follow for rate laws.
+    debug : bool, optional
+        If True, prints debug messages. Defaults to False.
+    testing_flag : bool
+        If True, only short subset of reactions is examined. Defaults to False.
+
+    Returns
+    -------
+    pd.DataFrame
+        The generated full reaction DataFrame.
+
     """
     import cobra
 
@@ -542,10 +592,64 @@ def parse_kfit_mech_df(df_mechanism, m_model=None, model_name='model',
         
         return df_new_reactions
 
+    def generate_custom_reactions(rxn_df):
+        mechanism = rxn_df.mechanism
+        base_rxn_name = rxn_df.ID
+
+        rxn_list = []
+        df_new_reactions = df_join_reactions()
+        # substrates
+        sbo = rxn_df['SBO']
+        if sbo:
+            sbo = sbo.split(';')
+        # product
+        pro = rxn_df['PRO']
+        if pro:
+            pro = pro.split(';')
+        if debug:
+            print(sbo, pro)
+        if mechanism.lower() == 'seq':
+            # substrate binding
+            if sbo:
+                # note: the order adds to the right
+                for count, item in enumerate(sbo):
+                    current_react_list = [item]
+                    current_prod_list = None
+                    current_rxn_name = str(count)
+
+                    # add new data frame row
+                    rxn_list.append([rxn_df.ID, current_rxn_name,
+                                     current_react_list, current_prod_list,
+                                     'custom', 'reactant'])
+                    # print (current_rxn_name, current_react_list, current_prod_list)
+
+            # product release
+            if pro:
+                # note: the order on the right pops off from left, which is the
+                #   opposite of the add to the right for binding
+                count_start = len(sbo)
+                for count, item in enumerate(pro):
+                    current_react_list = None
+                    current_prod_list = [item]
+                    current_rxn_name = str(count + count_start)
+
+                    # add new data frame row
+                    rxn_list.append([rxn_df.ID, current_rxn_name,
+                                     current_react_list, current_prod_list,
+                                     'custom', 'product'])
+        # rate law defined in 'type' column
+        rate_law = rxn_df['rate law']
+        rxn_list.append([rxn_df.ID, current_rxn_name,
+                         None, None,
+                         'custom', rate_law])
+
+        # generate dataframe
+        df_new_reactions = df_join_reactions(pd.DataFrame(), rxn_list)
+
+        return df_new_reactions
 
     df_expanded_reactions = df_join_reactions()
     df_reactions = pd.DataFrame()
-    
 
     # main loop of function that loops over the reactions
     if testing_flag:
@@ -557,13 +661,61 @@ def parse_kfit_mech_df(df_mechanism, m_model=None, model_name='model',
             if mech_type.lower() == 'elemental':
                 _tmp_er = generate_elemental_reactions(df_mechanism.loc[rxn])
                 #print(ww)
-            elif mech_type.lower() == "mm" or mech_type.lower() == 'michaelis-menten':
-                
+            elif mech_type.lower() in ("mm", 'michaelis-menten'):
                 _tmp_er = generate_mm_reactions(df_mechanism.loc[rxn])
+            elif mech_type.lower() == 'custom':
+                _tmp_er = generate_custom_reactions(df_mechanism.loc[rxn])
             else:
                 print (f"Unknown mechanism type {mech_type}")
 
             df_reactions = pd.concat([df_reactions, _tmp_er],ignore_index=True)
     
     return df_reactions
+
+
+def parse_kfit_ss_data_df(df_data: pd.DataFrame, debug: bool = False):
+    """
+    Take the raw DataFrames of the K-FIT data inputs and process to standard format.
+
+    Parameters
+    ----------
+    df_data : pd.DataFrame
+        DataFrame containing K-FIT data.
+    debug : bool, optional
+        If True, prints a debug message. Defaults to False.
+
+    Returns
+    -------
+    pd.DataFrame
+        The processed K-FIT data DataFrame.
+    """
+    # Rename "Mutant" column to "Experiment ID" and move to first column in preparation
+    #   for more complex data blocks
+    df_data.rename(columns = {'Mutant' : 'experiment ID', 'ID' : 'rxn ID'}, inplace = True)
+    df_data = df_data[df_data.columns[[1, 0, 2, 3, 4, 5]]]
+
+    return df_data
+
+
+def parse_strainer_dy_data_df(df_data: pd.DataFrame, debug: bool = False):
+    """
+    Take the raw DataFrames of the strainer data inputs and process to standard format.
+
+    Parameters
+    ----------
+    df_data : pd.DataFrame
+        DataFrame containing strainer data.
+    debug : bool, optional
+        If True, prints a debug message. Defaults to False.
+
+    Returns
+    -------
+    pd.DataFrame
+        The processed strainer data DataFrame.
+    """
+    # right now, the entire processing is handled by the file reader, but portions should be moved here
+    # in order to build the file up by individual sheets, which will eventually enable parsing of multiple
+    # flat text files and assembling them into the dynamic dataframes.
+
+    return df_data
 

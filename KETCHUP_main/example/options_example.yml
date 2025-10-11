@@ -1,0 +1,20 @@
+---
+# KETCHUP options file for KETCHUP_example.py
+## Primary options
+input_format: kfit # flag for kind of input files
+directory_model: "./data/" # location of model files
+filename_model: k-ecoli74_model.xlsx
+filename_mechanism: k-ecoli74_mechanism.xlsx
+directory_data: "./data/" # location of data files
+filename_data: k-ecoli74_data.xlsx
+'data_type': 'static' # static or dynamic data
+directory_output: "." # location of output files
+model_name: k-ecoli74
+## Secondary options
+debug: False # change to True for additional runtime output
+flag_output_sbml: True # flag to output results to SBML file
+mechanism_type: elemental
+seedvalue: 0 # integer or "time" to use clock time 
+distribution: uniform
+filename_solver_opt: ipopt.opt
+...

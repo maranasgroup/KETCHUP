@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Example KETCHUP script
+# Example KETCHUP dynamic script
 #
 # Edit items in ketchup_user_options to select a different model, data, or other options
 from argparse import Namespace
@@ -22,25 +22,34 @@ def ketchup_user_options(cmd_args: Namespace) -> dict:
     """
     import os
     from ktools.ketchup.ketchup import ketchup_model_options
-
+    
     # primary items
     user_options: dict = {
-        'input_format': 'kfit', # flag for kind of input files
-        'directory_model': os.path.join(os.getcwd(), "data"), # location of model files
-        'filename_model': 'k-ecoli74_model.xlsx',
-        'filename_mechanism': 'k-ecoli74_mechanism.xlsx',
-        'directory_data': os.path.join(os.getcwd(), "data"), # location of data files
-        'filename_data': 'k-ecoli74_data.xlsx',
-        'data_type': 'static', # static or dynamic data
-        'directory_output': os.getcwd(), # location of output files
-        'model_name': 'k-ecoli74' # optional but here for easy edit. used in output
+        'directory_model' : os.path.join(os.getcwd(), "data"), # location of model files
+        'filename_model' : 'FDH_model.xlsx',
+        'filename_mechanism' : 'FDH_mechanism.xlsx',
+        'mechanism_type': 'custom', # rate law to follow
+        'directory_data' : os.path.join(os.getcwd(), "data"), # location of data files
+        'filename_data' : 'FDH_dataset_series_A1.xlsx',
+        'data_type': 'dynamic',
+        'data_format': 'strainer', # Systematically processing TRAINing expERimental datasets 
+        'data_strainer_header': {"t_0": ["fdh", "23bdo", "actn", "nad", "formate", "nadh", "co2"], "time": ["nadh"],
+                                 "type": ["e", "c", "c", "c", "c", "c", "c", "c"],
+                                 "status": ["i", "g", "g", "i", "i", "i", "i", "d"]},
+        'directory_output' : os.getcwd(), # location of output files
+        'model_name' : 'FDH', # optional but here for easy edit. used in output
         }
 
     # secondary items
-    user_options['debug'] = False # change to True for additional runtime output
-    user_options['flag_output_sbml'] = True # flag to output results to SBML file
-    user_options['mechanism_type'] = 'elemental' # rate law to follow
+    user_options['debug'] = False # default for all functions is False. change to True for additional runtime output
+    #user_options['mechanism_type'] = 'custom' # rate law to follow
     user_options['distribution'] = 'uniform' # distribution for initialization
+    user_options['time_delay'] = {"A1": 0, "A2": 0, "A3" : 0,
+                                  "A4": 0, "A5": 0, "A6" : 0,
+                                  "A7": 0, "A8": 0, "A9" : 0}
+                                  # time-delay of beginning of simulations. units follow time data.
+                                  # if all are the same a scalar can be also used instead of a dictionary:
+                                  # user_options['time_delay'] = 0
 
     # options 'seedvalue' and 'filename_solver_opt' can be set/changed through command line arguments
 
@@ -61,14 +70,15 @@ def main() -> None:
     """
     import os
     import sys
-    
+
     # add path to ktools if not installed
-    sys.path.insert(0, os.path.join(os.getcwd(),"..","src"))
+    sys.path.insert(0, os.path.join(os.getcwd(), "..", "src"))
 
     import ktools
     from ktools.ketchup import (ketchup_generate_model, solve_ketchup_model, ketchup_output_write,
                                 ketchup_argument_parser)
-    from ktools.ketchup.analysis import evaluate_stability
+    from ktools.io import result_dump, create_sbml_kinetic_model
+    from ktools.ketchup.analysis import evaluate_stability, infeasible_constraints
     from timeit import default_timer as timer
 
     # parse command line arguments
@@ -79,10 +89,6 @@ def main() -> None:
     #    command line arguments takes precedent, followed by command line options
 
     ketchup_options = ketchup_user_options(args)
-
-    # alternatively, only use a program options yaml file passed through command line arguments and
-    #    uncomment the following line
-    # ketchup_options = ktools.ketchup.ketchup_model_options(args)
 
     # create the model
     ketchup_model = ketchup_generate_model(ketchup_options)

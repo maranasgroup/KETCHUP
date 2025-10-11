@@ -1,0 +1,5 @@
+---
+# KETCHUP options file for KETCHUP_example.py
+filename_data: FDH_dataset_series_A1.tsv
+data_format: flat
+...

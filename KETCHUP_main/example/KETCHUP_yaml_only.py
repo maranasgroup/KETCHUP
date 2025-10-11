@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 #
-# KETCHUP script
+# Example KETCHUP script
 #
-# This file only uses info from the YAML options file.
+# This example file only uses info from the YAML options file and is a good
+# way to check that you have all items stored there.
 
 def main() -> None:
     """
@@ -12,8 +13,8 @@ def main() -> None:
     import sys
     
     # add path to ktools if not installed
-    sys.path.insert(0, f"{os.getcwd()}/../src/")
-    
+    sys.path.insert(0, os.path.join(os.getcwd(), "..", "src"))
+
     import ktools
     from ktools.ketchup import (ketchup_generate_model, solve_ketchup_model,
                                 ketchup_output_write,
@@ -25,7 +26,7 @@ def main() -> None:
     # parse command line arguments
     args = ketchup_argument_parser()
 
-    # only use program options yaml file passed through command line arguments
+    # only use program options yaml file passed through command line arguments by using empty user_option dictionary
     ketchup_options = ketchup_model_options({}, args)
 
     # create the model

@@ -11,7 +11,10 @@ from typing import Union
 
 
 def sbml_check(value: Union[None,int], message: str) -> None:
-    """If 'value' is None, prints an error message constructed using
+    """
+    Checks a value for validity in the context of libSBML operations.
+
+    If 'value' is None, prints an error message constructed using
     'message' and then exits with status code 1.  If 'value' is an integer,
     it assumes it is a libSBML return status code.  If the code value is
     LIBSBML_OPERATION_SUCCESS, returns without further action; if it is not,
@@ -32,14 +35,31 @@ def sbml_check(value: Union[None,int], message: str) -> None:
     else:
         return
 
+
 def check_reaction_compartment(m_model: cobra.core.model.Model, rxn_id: str) -> list:
-    """Returns list of compartments for the metabolites in selected reaction
+    """
+    Returns list of compartments for the metabolites in selected reaction.
+
+    Parameters
+    ----------
+    m_model : cobra.core.model.Model
+        The COBRApy model.
+
+    rxn_id : str
+        The ID of the reaction to check.
+
+    Returns
+    -------
+    list
+        A list of unique compartment IDs to which the metabolites in the selected
+        reaction belong.
     """
     rxn = m_model.reactions.get_by_id(rxn_id)
     compartments = list(dict.fromkeys( 
     [m.compartment for m in m_model.reactions.get_by_id(rxn_id).metabolites] 
     ))
     return compartments
+
 
 def make_valid_sid(sid: str) -> str:
     """Returns string that contains only characters valid for use in id attributes.
@@ -67,8 +87,9 @@ def make_valid_sid(sid: str) -> str:
     
     return sid
 
-def v_rate_to_sbml(rate:str, block_id:str) -> str:
-    """Returns rate law converted into valid sbml id attributes for the variables
+
+def v_rate_to_sbml(rate: str, block_id: str) -> str:
+    """Returns rate law converted into valid SBML ID attributes for the variables
     """
     rate = rate[rate.find('  ==  ')+6:] # slice off left side
     rate = rate.replace(block_id+'.','') # remove block id
@@ -90,10 +111,11 @@ def v_rate_to_sbml(rate:str, block_id:str) -> str:
         rate = '*'.join(tmp)
     return rate
 
+
 def create_sbml_kinetic_model(pyomo_model: pyomo.core.base.PyomoModel.ConcreteModel,
                               block_id: int = 1) -> str:
     """Returns complete SBML Level 3 model of the kinetic parameterization
-    at the solution
+    at the solution.
     """
     # First create empty SBMLDocument object
  
@@ -143,7 +165,7 @@ def create_sbml_kinetic_model(pyomo_model: pyomo.core.base.PyomoModel.ConcreteMo
     # Create species inside the model
     
     # First compounds
-    
+
     for metab in pyomo_model.m_model.metabolites:
         _tmp_s = model.createSpecies()
         sbml_check(_tmp_s,                                 f'create species {metab.id}')
@@ -281,5 +303,3 @@ def create_sbml_kinetic_model(pyomo_model: pyomo.core.base.PyomoModel.ConcreteMo
             sbml_check(kinetic_law.setSBOTerm(12),           'set kinetic law SBO term')
     
     return libsbml.writeSBMLToString(document)
-
-
