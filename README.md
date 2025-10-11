@@ -18,8 +18,12 @@ conda env create -f <path to ketchup_environment.yml file>
 
 For further information, please follow the detailed installation documentation located in the [``doc`` subdirectory](doc).
 
+# Documentation
+
+Documentation files are located in the [``doc`` subdirectory](doc). These include a quickstart and details about the dynamic extension.
+
 # Examples and Graphical User Interface
-Command line python examples and a streamlit-based graphical user interface are provided in the [``example`` subdirectory](KETCHUP_main/example). Please see https://streamlit.io for instructions on installing streamlit. Streamlit is included in our suggested anaconda environment.
+Command line python examples and a streamlit-based graphical user interface are provided in the [``example`` subdirectory](KETCHUP_main/example) and [``streamlit`` subdirectory](KETCHUP_main/example), respectively. README files in each location give details on usage. Streamlit is included in our suggested anaconda environment.  Please see https://streamlit.io for more details about streamlit.
 
 # Manuscript Supplementary Materials
 Files specifically associated with publications involving KETCHUP development are located in the [``Manuscript Supplementary Materials`` directory](Manuscript%20Supplementary%20Materials). These files are not required for KETCHUP to function.
