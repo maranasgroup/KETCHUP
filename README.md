@@ -32,7 +32,7 @@ This work was funded by the DOE Center for Advanced Bioenergy and Bioproducts In
 
 ## References
 <ol>
- <li><a href="cite1"></a>Mengqi Hu, Patrick F. Suthers, Costas D. Maranas, 2024. “KETCHUP: Parameterizing of large-scale kinetic models using multiple datasets with different reference states.” Metab. Eng., 82 (March), pp. 123–133. https://doi.org/10.1016/j.ymben.2024.02.002</li>
- <li><a href="cite2"></a>Saratram Gopalakrishnan, Satyakam Dash, and Costas D. Maranas, 2020. “K-FIT: An accelerated kinetic parameterization algorithm using steady-state fluxomic data.” Metab. Eng., 61 (January), pp. 197–205. https://doi.org/10.1016/j.ymben.2020.03.001</li>
- <li><a href="cite3"></a>Mengqi Hu, Bilal S. Jilani, Daniel G. Olson, and Costas D. Maranas, 2025. "Parameterization of cell-free systems with time-series data using KETCHUP." PLoS Comput Biol 21(11): e1013724. https://doi.org/10.1371/journal.pcbi.1013724</li>
+ <li><a id="cite1"></a>Mengqi Hu, Patrick F. Suthers, Costas D. Maranas, 2024. “KETCHUP: Parameterizing of large-scale kinetic models using multiple datasets with different reference states.” Metab. Eng., 82 (March), pp. 123–133. https://doi.org/10.1016/j.ymben.2024.02.002</li>
+ <li><a id="cite2"></a>Saratram Gopalakrishnan, Satyakam Dash, and Costas D. Maranas, 2020. “K-FIT: An accelerated kinetic parameterization algorithm using steady-state fluxomic data.” Metab. Eng., 61 (January), pp. 197–205. https://doi.org/10.1016/j.ymben.2020.03.001</li>
+ <li><a id="cite3"></a>Mengqi Hu, Bilal S. Jilani, Daniel G. Olson, and Costas D. Maranas, 2025. "Parameterization of cell-free systems with time-series data using KETCHUP." PLoS Comput Biol 21(11): e1013724. https://doi.org/10.1371/journal.pcbi.1013724</li>
 </ol>
